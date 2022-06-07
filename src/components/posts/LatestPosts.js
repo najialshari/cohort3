@@ -3,7 +3,7 @@ const LatestPosts = ({posts}) => {
     return (
         <ul>
             {posts.map((post, i) => {
-                return <li key={i}>{post}</li>
+                return <li key={i}>{post.title}</li>
             })}
         </ul>
     )
