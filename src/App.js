@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Counter from "./components/counter/Counter";
 
 function App() {
+	// just to test github
 	const [showCounter, setShowCounter] = useState(false)
 	const [name, setName] = useState('Feras')
 	const [surname, setSurname] = useState('Jobeir')
