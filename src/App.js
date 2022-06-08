@@ -2,9 +2,10 @@ import UserProfile from "./components/user/UserProfile";
 import LatestPosts from "./components/posts/LatestPosts";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { useState, useEffect } from "react";
+import Counter from "./components/counter/Counter";
 
 function App() {
-
+	const [showCounter, setShowCounter] = useState(false)
 	const [name, setName] = useState('Feras')
 	const [surname, setSurname] = useState('Jobeir')
 	const [latestPosts, setLatestPosts] = useState([])
@@ -49,9 +50,14 @@ function App() {
 	
 	const addNewTitle = () => {
 		const newTitle = document.getElementById('new_title').value
-		setLatestPosts([...latestPosts, newTitle])
+		setLatestPosts([...latestPosts, {title: newTitle}])
+		console.log('Inside addNewtitle', latestPosts)
 		setName(newTitle)
 	}
+
+	useEffect(() => {
+		console.log('In use effect', latestPosts)
+	}, [latestPosts])
 
 	return (
 		<div className="App">
@@ -60,6 +66,8 @@ function App() {
 			<input type='button' value='Add Title' onClick={addNewTitle} />
 			<UserProfile name={name} surname={surname} />
 			<LatestPosts posts={latestPosts} />
+			{showCounter && <Counter />}
+			<input type='button' onClick={() => {setShowCounter(!showCounter)}} value='Toggle Counter' />
 		</div>
 	);
 }
