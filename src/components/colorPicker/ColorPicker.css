@@ -1,0 +1,10 @@
+.colorCircle {
+    width: 100px;
+    height: 100px;
+    border-radius:50px;
+    margin: 10px;
+}
+
+.mt-5 {
+    margin-top: 0; /* will not work because of !important in bootstrap */
+}

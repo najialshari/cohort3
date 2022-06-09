@@ -3,6 +3,7 @@ import LatestPosts from "./components/posts/LatestPosts";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { useState, useEffect } from "react";
 import Counter from "./components/counter/Counter";
+import ColorPicker from "./components/colorPicker/ColorPicker";
 
 function App() {
 	// just to test github
@@ -61,15 +62,16 @@ function App() {
 	}, [latestPosts])
 
 	return (
-		<div className="App">
-			This is App component
-			<input type='text' id="new_title" />
-			<input type='button' value='Add Title' onClick={addNewTitle} />
-			<UserProfile name={name} surname={surname} />
-			<LatestPosts posts={latestPosts} />
-			{showCounter && <Counter />}
-			<input type='button' onClick={() => {setShowCounter(!showCounter)}} value='Toggle Counter' />
-		</div>
+		// <div className="App">
+		// 	This is App component
+		// 	<input type='text' id="new_title" />
+		// 	<input type='button' value='Add Title' onClick={addNewTitle} />
+		// 	<UserProfile name={name} surname={surname} />
+		// 	<LatestPosts posts={latestPosts} />
+		// 	{showCounter && <Counter />}
+		// 	<input type='button' onClick={() => {setShowCounter(!showCounter)}} value='Toggle Counter' />
+		// </div>
+		<ColorPicker />
 	);
 }
 
